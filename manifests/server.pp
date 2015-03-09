@@ -57,7 +57,7 @@ class nagios::server(
     nagios::servicegroup { 'Default' : }
   }
 
-  Nagios::Host <<| |>>
+  Nagios::Server_resources::Host <<| |>>
 
   service { 'nagios3':
     enable          => true,

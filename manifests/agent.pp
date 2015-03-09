@@ -37,7 +37,7 @@ class nagios::agent(
     subscribe =>  File [ [ 'nrpe.cfg' ] ], 
   }
 
-  @@nagios::host { "$hname" :
+  @@nagios::server_resources::host { "$hname" :
     name   => "$fqdn",
     ipadd  => "$ipaddress",
     use    => "$mon_profile",
