@@ -1,4 +1,7 @@
-class nagios::server {
+class nagios::server(
+  $omit_default_servicegroup = false,
+  $default_smembers = 'Default',
+){
   include nagios
   include nagios::nagiosgrapher
 
@@ -40,7 +43,9 @@ class nagios::server {
   nagios_configfile_purge{ $nagios_server_configfiles_purge :}
 
   # The default hostgroup
-
+  if ( $omit_default_servicegroup ){
+    nagios::servicegroup { 'Default' : }
+  }
 
   Nagios::Host <<| |>>
 
