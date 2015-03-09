@@ -48,7 +48,7 @@ class nagios::server_resources(
       }
   }
 
-  define nagios::remote_service (
+  define remote_service (
     $check, $use = 'generic-service', 
   ){
     if ( $members != 'all-servers,unmanaged-servers' ){
@@ -64,7 +64,7 @@ class nagios::server_resources(
       content => "define service {\n service_description $title\n use $use\n hostgroup_name $members \n check_command $check\n servicegroups $groups\n contact_groups admins\n}\n",
     }
 
-    define nagios::service (
+    define service (
       $check, $use = 'generic-service', 
     ){
       file { "nagios_service_$title" :
@@ -89,7 +89,7 @@ class nagios::server_resources(
         content => "define servicegroup  { \n servicegroup_name  $title\n alias $title\n}\n",
       }
 
-      define nagios::switch(
+      define switch(
         $parent = '', $ipadd, 
         $use = 'generic-switch', 
         $icon = 'base/switch40'
