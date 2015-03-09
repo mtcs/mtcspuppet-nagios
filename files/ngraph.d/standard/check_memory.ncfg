@@ -1,0 +1,30 @@
+define ngraph{
+	service_name		Memory
+	graph_perf_regex	mused=(\d+)
+	graph_value		mused
+	graph_units		percent
+	graph_legend		Memory
+	rrd_plottype		AREA
+	rrd_color		1155ff
+}
+define ngraph{
+	service_name		Memory
+	type			VDEF
+	graph_value		musedaverage
+	graph_units		degres
+	graph_legend		Average Used Mem.
+	graph_calc		mused,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		111188
+	hide			no
+}
+
+define ngraph{
+	service_name		Memory
+	type			GPRINT
+	print_source		mused
+	print_description	Av. Mem. Used:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+

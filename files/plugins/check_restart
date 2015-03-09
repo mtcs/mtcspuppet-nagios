@@ -1,0 +1,10 @@
+#!/bin/bash
+RET=0;
+if [ -e /var/run/reboot-required ] ; then
+	echo "WARNING - Restart Required";
+	RET=1;
+else
+	echo "OK - No Restart Required"
+fi
+	
+exit $RET ;

@@ -1,0 +1,286 @@
+# Multi Graphs #########################################
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		nethq-dev Services
+	# RegEX
+	hosts			nethq-dev
+	# RegEX
+	services		.*?
+	# line or stack or area
+	graph_type		line3
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Ping Loss
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		PING
+	graph_values		Loss
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Ping RTA
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		PING
+	graph_values		RTA
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Temperature
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Temperature
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All IO TPS
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		IO Status
+	graph_values		iostatusiops
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All IO R
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		IO Status
+	graph_values		iostatusread
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All IO W
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		IO Status
+	graph_values		iostatuswrite
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Swap
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Swap Usage
+	graph_values		swapfree
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Memory
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Memory Usage
+	graph_values		mused
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All CPU
+	type			CDEF
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		CPU
+	graph_values		idle
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			reverse
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Load
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Load
+	graph_values		1min
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Bandwidth St TX
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Bandwidth
+	graph_values		tx
+	# line or stack or area
+	graph_type		stack
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Bandwidth St RX
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Bandwidth
+	graph_values		rx
+	# line or stack or area
+	graph_type		stack
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Disk
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Disk
+	graph_values		used
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Hadoop CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Hadoop	
+	graph_values		cpu
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Hadoop MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		Hadoop	
+	graph_values		mem
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	order			normal
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All HTTP
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		HTTP.*?
+	# line or stack or area
+	graph_type		stack
+	# normal or reverse or leave blank
+	order			reverse
+	colors			ff8000, 00ff00, 0000ff
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Services
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		.*?
+	# line or stack or area
+	graph_type		area
+	# normal or reverse or leave blank
+	# order			normal
+	# colors		ff8000, 00ff00, 0000ff
+	colors 			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ffBB00,ff00BB,00ffBB,BBff00,00BBff,BB00ff,ff6600,ff0066,00ff66,66ff00,0066ff,6600ff,ff66BB,ffBB66,BBff66,66ffBB,BB66ff,66BBff,BB0000,00BB00,0000BB,BBBB00,BB00BB,00BBBB,AAAAAA,660000,006600,000066,666600,660066,006666,666666
+}

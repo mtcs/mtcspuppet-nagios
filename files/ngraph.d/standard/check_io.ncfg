@@ -1,0 +1,98 @@
+define ngraph{
+	service_name		IO_sd
+	graph_perf_regex	tps=(\d+)io/s
+	graph_value		iostatusiops
+	graph_units		Bytes/s
+	graph_legend		IO Transactions / s
+	rrd_plottype		LINE3
+	rrd_color		1155ff
+	hide			no
+	page			io/s
+}
+define ngraph{
+	service_name		IO_sd
+	type			VDEF
+	graph_value		iostatusiopsavg
+	graph_legend		Average t/s
+	graph_calc		iostatusiops,AVERAGE
+	rrd_plottype		LINE2
+	rrd_color		111188
+	hide			no
+	page			io/s
+}
+
+define ngraph{
+	service_name		IO_sd
+	type			GPRINT
+	print_source		iostatusiops
+	print_description	Av. t/s:
+	print_function		AVERAGE
+	print_format		%2.1lf
+	page			io/s
+}
+define ngraph{
+	service_name		IO_sd
+	graph_perf_regex	read=(\d+)b/s
+	graph_value		iostatusread
+	graph_units		Bytes/s
+	graph_legend		IO Bytes R / s
+	rrd_plottype		LINE3
+	rrd_color		1155ff
+	hide			no
+	page			rw
+}
+define ngraph{
+	service_name		IO_sd
+	type			VDEF
+	graph_value		iostatusreadavg
+	graph_legend		Average R /s.
+	graph_calc		iostatusread,AVERAGE
+	rrd_plottype		LINE2
+	rrd_color		111188
+	hide			no
+	page			rw
+}
+
+define ngraph{
+	service_name		IO_sd
+	graph_perf_regex	write=(\d+)b/s
+	graph_value		iostatuswrite
+	graph_units		Bytes/s
+	graph_legend		IO Bytes W / s
+	rrd_plottype		LINE3
+	rrd_color		11ff55
+	hide			no
+	page			rw
+}
+define ngraph{
+	service_name		IO_sd
+	type			VDEF
+	graph_value		iostatuswriteavg
+	graph_legend		Average W / s
+	graph_calc		iostatuswrite,AVERAGE
+	rrd_plottype		LINE2
+	rrd_color		118811
+	hide			no
+	page			rw
+}
+
+define ngraph{
+	service_name		IO_sd
+	type			GPRINT
+	print_source		iostatusread
+	print_description	Av. R/s:
+	print_function		AVERAGE
+	print_format		%2.1lf
+	page			rw
+}
+
+define ngraph{
+	service_name		IO_sd
+	type			GPRINT
+	print_source		iostatuswrite
+	print_description	Av. W/s:
+	print_function		AVERAGE
+	print_format		%2.1lf
+	page			rw
+}
+

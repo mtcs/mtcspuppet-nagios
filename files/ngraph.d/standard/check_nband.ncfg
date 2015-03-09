@@ -1,0 +1,126 @@
+
+define ngraph{
+	service_name		Bandwidth_
+	type			HRULE
+	hrule_value		1000000
+	rrd_color		aaaaaa
+	rrd_plottype		LINE2
+	hide			no
+}
+define ngraph{
+	service_name		Bandwidth_
+	type			HRULE
+	hrule_value		10000000
+	rrd_color		aaaaaa
+	rrd_plottype		LINE2
+	hide			no
+}
+define ngraph{
+	service_name		Bandwidth_
+	type			HRULE
+	hrule_value		100000000
+	rrd_color		aaaaaa
+	rrd_plottype		LINE2
+	hide			no
+}
+define ngraph{
+	service_name		Bandwidth_
+	graph_perf_regex	rx=(\d+)
+	graph_value		rx
+	graph_units		bps
+	graph_legend		RX
+	rrd_plottype		AREA
+	rrd_color		00ca00
+}
+define ngraph{
+	service_name		Bandwidth_
+	type			VDEF
+	graph_value		rxaverage
+	graph_units		degres
+	graph_legend		Average RX
+	graph_calc		rx,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		008800
+	hide			no
+}
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		rx
+	print_description	Min. RX:
+	print_function		MIN
+	print_format		%8.0lf
+}
+
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		rx
+	print_description	AV. RX:
+	print_function		AVERAGE
+	print_format		%8.0lf
+}
+
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		rx
+	print_description	Max. RX:
+	print_function		MAX
+	print_format		%8.0lf
+	print_eol		left
+}
+
+
+define ngraph{
+	service_name		Bandwidth_
+	graph_perf_regex	tx=(\d+)
+	graph_value		tx
+	graph_units		bps
+	graph_legend		TX
+	rrd_plottype		AREA
+	rrd_color		2222ee
+}
+define ngraph{
+	service_name		Bandwidth_
+	type			VDEF
+	graph_value		txaverage
+	graph_units		degres
+	graph_legend		Average TX
+	graph_calc		tx,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		000088
+	hide			no
+}
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		tx
+	print_description	Min. TX:
+	print_function		MIN
+	print_format		%8.0lf
+}
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		tx
+	print_description	Av. TX:
+	print_function		AVERAGE
+	print_format		%8.0lf
+}
+
+define ngraph{
+	service_name		Bandwidth_
+	type			GPRINT
+	print_source		tx
+	print_description	Max. TX:
+	print_function		MAX
+	print_format		%8.0lf
+	print_eol		left
+}
+

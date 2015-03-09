@@ -1,0 +1,155 @@
+#---
+#NagiosGrapherTemplateforcheck_load
+#Author:MariusHein
+#---
+
+define ngraph{
+	service_name		LOAD
+	graph_log_regex		,\s+(\d+[\.,]\d+)($|critical|warning)
+	graph_value		15min
+	graph_units		load
+	graph_legend		15min avg load:
+	graph_legend_max	15
+	rrd_plottype		AREA
+	rrd_color		EACC00
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		15min
+	print_description	Latest:
+	print_function		LAST
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		15min
+	print_description	Maximum:
+	print_function		MAX
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		15min
+	print_description	Average:
+	print_function		AVERAGE
+	print_format		%2.2lf
+	print_eol		left
+}
+
+define ngraph{
+	service_name		LOAD
+	graph_log_regex		,\s+(\d+[\.,]\d+),
+	graph_value		5min
+	graph_units		load
+	graph_legend		5min avg load:
+	graph_legend_max	15
+	rrd_plottype		STACK
+	rrd_color		EA8F00
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		5min
+	print_description	Latest:
+	print_function		LAST
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		5min
+	print_description	Maximum:
+	print_function		MAX
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		5min
+	print_description	Average:
+	print_function		AVERAGE
+	print_format		%2.2lf
+	print_eol		left
+}
+
+define ngraph{
+	service_name		LOAD
+	graph_log_regex		:\s+(\d+[\.,]\d+),
+	graph_value		1min
+	graph_units		load
+	graph_legend		1min avg load:
+	graph_legend_max	15
+	rrd_plottype		STACK
+	rrd_color		FF0000
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		1min
+	print_description	Latest:
+	print_function		LAST
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		1min
+	print_descriptio	nMaximum:
+	print_function		MAX
+	print_format		%2.2lf
+}
+
+define ngraph{
+	service_name		LOAD
+	type			GPRINT
+	print_source		1min
+	print_description	Average:
+	print_function		AVERAGE
+	print_format		%2.2lf
+	print_eol		left
+}
+
+define ngraph{
+	service_name		LOAD
+	type			CDEF
+	graph_value		cdef_load
+	graph_units
+	graph_legend
+	graph_calc		15min,5min,+,1min,+
+	rrd_plottype		LINE3
+	rrd_color		000000
+	hide			no
+}
+
+define ngraph{
+	service_name		LOAD
+	type			COMMENT
+	print_description
+	print_eol		justify
+	print_repeat		0
+}
+
+define ngraph{
+	service_name		LOAD
+	type			VDEF
+	graph_value		vdef_load_average
+	graph_units
+	graph_legend		Sum avg values
+	graph_calc		cdef_load,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		0000ff
+	hide			no
+}
+
+#[EOF]

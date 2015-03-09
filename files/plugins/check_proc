@@ -1,0 +1,17 @@
+#!/bin/bash
+RET=0;
+PROCREGEX="$1";
+
+CHECK=$( ps aux | grep -i $PROCREGEX | grep -v grep )
+
+if [ -n "$CHECK" ] ; then
+	PID=$( echo $CHECK | awk '{ print $2 }'  )
+	CPU=$( echo $CHECK | awk '{ print $3 }'  )
+	MEM=$( echo $CHECK | awk '{ print $4 }'  )
+	echo "OK - Hadoop $PROCREGEX process found (PID $PID CPU=$CPU MEM=$MEM)"
+else
+	echo "CRITICAL - Hadoop $PROCREGEX process not found";
+	RET=2;
+fi
+	
+exit $RET ;

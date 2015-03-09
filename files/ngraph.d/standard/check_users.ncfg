@@ -1,0 +1,16 @@
+#---
+#NagiosGrapherTemplateforcheck_users
+#Author:MariusHein
+#---
+
+define ngraph{
+	service_name		USERS
+	graph_log_regex		([0-9]+)\s*us
+	graph_value		user
+	graph_units		users
+	graph_legend		Logged in users
+	rrd_plottype		AREA
+	rrd_color		0066c0
+}
+
+#[EOF]

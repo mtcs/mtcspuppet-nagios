@@ -1,0 +1,16 @@
+#!/bin/bash
+RET=0;
+PROCNAME="$1";
+
+CHECK=$( ps aux | grep -i $PROCNAME | grep -v grep )
+if [ -n "$CHECK" ] ; then
+	PID=$( echo $CHECK | awk '{ print $2 }'  )
+	CPU=$( echo $CHECK | awk '{ print $3 }'  )
+	MEM=$( echo $CHECK | awk '{ print $4 }'  )
+	echo "OK - Hadoop $PROCNAME process found (PID $PID CPU=$CPU MEM=$MEM)"
+else
+	echo "CRITICAL - Hadoop $PROCNAME process not found";
+	RET=2;
+fi
+	
+exit $RET ;

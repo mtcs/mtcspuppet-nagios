@@ -1,0 +1,112 @@
+#---
+#NagiosGrapherTemplateforcheck_cpu
+#Author:MtCS
+#---
+
+define ngraph{
+	service_name		CPU
+	graph_perf_regex	idle=(\d+[\.,]\d+)
+	graph_value		idle
+	graph_units		%
+	graph_legend		Idle
+	rrd_plottype		AREA
+	rrd_color		999999
+	hide			yes
+}
+define ngraph{
+	service_name		CPU
+	graph_perf_regex	user=(\d+[\.,]\d+)
+	graph_value		user
+	graph_units		%
+	graph_legend		User
+	rrd_plottype		AREA
+	rrd_color		ffcc11
+}
+
+define ngraph{
+	service_name		CPU
+	graph_perf_regex	nice=(\d+[\.,]\d+)
+	graph_value		nice
+	graph_units		%
+	graph_legend		Nice
+	rrd_plottype		STACK
+	rrd_color		ff7711
+}
+
+define ngraph{
+	service_name		CPU
+	graph_perf_regex	sys=(\d+[\.,]\d+)
+	graph_value		sys
+	graph_units		%
+	graph_legend		Sys
+	rrd_plottype		STACK
+	rrd_color		EE2222
+}
+
+
+
+define ngraph{
+	service_name		CPU
+	graph_perf_regex	iowait=(\d+[\.,]\d+)
+	graph_value		iowait
+	graph_units		%
+	graph_legend		IO Wait
+	rrd_plottype		STACK
+	rrd_color		1155dd
+}
+
+define ngraph{
+	service_name		CPU
+	type			CDEF
+	graph_value		used
+	graph_units		percent	
+	graph_calc		100,idle,-
+	rrd_plottype		LINE2
+	rrd_color		ff0000
+	hide			yes
+}
+
+define ngraph{
+	service_name		CPU
+	type			VDEF
+	graph_value		avg_used
+	graph_units		degres
+	graph_legend		Av. Used
+	graph_calc		used,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		BB2222
+	hide			no
+}
+
+define ngraph{
+	service_name		CPU
+	type			GPRINT
+	print_source		used
+	print_description	Min. Used:
+	print_function		MIN
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		CPU
+	type			GPRINT
+	print_source		used
+	print_description	Av. Used:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		CPU
+	type			GPRINT
+	print_source		used
+	print_description	Max. Used:
+	print_function		MAX
+	print_format		%2.1lf
+	print_eol		left
+}
+
+
+
+
+#[EOF]

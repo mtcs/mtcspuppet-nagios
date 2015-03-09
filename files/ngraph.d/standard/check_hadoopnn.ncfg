@@ -1,0 +1,108 @@
+#---
+#NagiosGrapherTemplateforcheck_cpu
+#Author:MtCS
+#---
+
+define ngraph{
+	service_name		Hadoop NameNode
+	graph_log_regex		CPU=(\d+[\.,]\d+)
+	graph_value		cpu
+	graph_units		%
+	graph_legend		NameNode CPU
+	rrd_plottype		AREA
+	rrd_color		229933
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	graph_log_regex		MEM=(\d+[\.,]\d+)
+	graph_value		mem
+	graph_units		%
+	graph_legend		NameNode Mem.
+	rrd_plottype		LINE
+	rrd_color		223399
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			VDEF
+	graph_value		avg_cpu
+	graph_units		degres
+	graph_legend		Av. Used CPU
+	graph_calc		cpu,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		006600
+	hide			no
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			VDEF
+	graph_value		avg_mem
+	graph_units		degres
+	graph_legend		Av. Used MEM
+	graph_calc		mem,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		000266
+	hide			no
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		cpu
+	print_description	Min. CPU Used:
+	print_function		MIN
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		cpu
+	print_description	Av. CPU Used:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		cpu
+	print_description	Max. CPU Used:
+	print_function		MAX
+	print_format		%2.1lf\n
+	print_eol		left
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		mem
+	print_description	Min. Mem Used:
+	print_function		MIN
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		mem
+	print_description	Av. Mem Used:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Hadoop NameNode
+	type			GPRINT
+	print_source		mem
+	print_description	Max. Mem Used:
+	print_function		MAX
+	print_format		%2.1lf\n
+	print_eol		left
+}
+
+
+
+#[EOF]

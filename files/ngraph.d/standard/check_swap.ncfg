@@ -1,0 +1,43 @@
+define ngraph{
+	service_name		Swap
+	graph_log_regex		-\s(\d+)%\sfree
+	graph_value		swapfree
+	graph_units		percent
+	graph_legend		Swap
+	rrd_plottype		AREA
+	rrd_color		1155ff
+	hide			yes
+}
+
+define ngraph{
+	service_name		Swap
+	type			CDEF
+	graph_value		swapused
+	graph_units		degres
+	graph_legend		Average Used Swap
+	graph_calc		100,swapfree,-
+	rrd_plottype		LINE3
+	rrd_color		ff5511
+	hide			no
+}
+
+define ngraph{
+	service_name		Swap
+	type			VDEF
+	graph_value		swapusedaverage
+	graph_units		degres
+	graph_legend		Average Used Swap
+	graph_calc		swapused,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		111188
+	hide			no
+}
+define ngraph{
+	service_name		Swap
+	type			GPRINT
+	print_source		swapused
+	print_description	Av. Used Swap:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+

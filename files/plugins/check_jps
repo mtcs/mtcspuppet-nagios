@@ -1,0 +1,16 @@
+#!/bin/bash
+RET=0;
+
+if ( ! jps > /dev/null) ; then
+	echo "UNKNOWN - Java JPS not found"
+	exit 3;
+fi
+
+if ( jps | grep -iq " $1" ) ; then
+	echo "OK - Java $1 process found"
+else
+	echo "CRITICAL - $1 process not found";
+	RET=2;
+fi
+	
+exit $RET ;

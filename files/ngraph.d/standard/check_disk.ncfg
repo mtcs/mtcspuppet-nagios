@@ -1,0 +1,93 @@
+# ---
+# NagiosGrapher Template for check_disk
+# ---
+
+# Linux Disk Usage
+define ngraph{
+	service_name		Disk_Space
+	graph_perf_regex	=(\d+)MB;
+	graph_value		usedspace
+	graph_units		MB
+	graph_legend		Used Space
+	rrd_plottype		AREA
+	rrd_color		ff3333
+	hide			yes
+}
+
+define ngraph{
+	service_name		Disk_Space
+	graph_perf_regex	=\d+MB;\d+;\d+;\d+;(\d+)
+	graph_value		totalspace
+	graph_units		MB
+	graph_legend		Total Space
+	rrd_plottype		AREA
+	rrd_color		66ff66
+	hide			yes
+}
+
+define ngraph{
+	service_name		Disk_Space
+	type			CDEF
+	graph_value		used
+	graph_units		percent	
+	graph_legend		used space
+	graph_calc		usedspace,100,*,totalspace,/
+	rrd_plottype		AREA
+	rrd_color		ff0000
+	page			1 Percentage
+	hide			no
+}
+
+define ngraph{
+	service_name		Disk_Space
+	type			CDEF
+	graph_value		free
+	graph_units		percent	
+	graph_legend		free space
+	graph_calc		100,used,-
+	rrd_plottype		STACK
+	rrd_color		00a000
+	page			1 Percentage
+	hide			no
+}
+
+define ngraph{
+	service_name		Disk_Space
+	graph_log_regex		(\d+)% inode
+	graph_value		RTA
+	graph_units		MB
+	graph_legend		Inodes Free
+	rrd_plottype		AREA
+	rrd_color		a00000
+	page			3 Inode
+	hide			no
+}
+
+define ngraph{
+	service_name		Disk_Space
+	type			CDEF
+	graph_value		usedspacegb
+	graph_units		GB
+	graph_legend		Used Space
+	graph_calc		usedspace,1000,/
+	rrd_plottype		AREA
+	rrd_color		ff3333
+	page			2 Absolute
+	hide			no
+}
+
+define ngraph{
+	service_name		Disk_Space
+	type			CDEF
+	graph_value		freespacegb
+	graph_units		GB
+	graph_legend		Free Space
+	graph_calc		totalspace,usedspace,-,1000,/
+	rrd_plottype		STACK
+	rrd_color		66ff66
+	page			2 Absolute
+	hide			no
+}
+
+
+# [EOF]

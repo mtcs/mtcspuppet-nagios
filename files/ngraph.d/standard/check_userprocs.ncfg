@@ -1,0 +1,1112 @@
+#GENERATE AUTOMATICALLY!!!!!
+#hadoop vianna magno fabricio tiagorm giovannicomarela tpontes marisavas diego rauber saulomrr jpesce douglasf rapha mtcs adrianov root claudiomanoel anupama felipemoraes
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	hadoop-CPU=(\d+[\.,]?\d?)%
+	graph_value		hadoopCPU
+	graph_units		%
+	graph_legend		hadoop CPU
+	rrd_plottype		LINE3
+	rrd_color		ff0000
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	hadoop-MEM=(\d+[\.,]?\d?)%
+	graph_value		hadoopMEM
+	graph_units		%
+	graph_legend		hadoop MEM
+	rrd_plottype		LINE3
+	rrd_color		ff0000
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	vianna-CPU=(\d+[\.,]?\d?)%
+	graph_value		viannaCPU
+	graph_units		%
+	graph_legend		vianna CPU
+	rrd_plottype		LINE3
+	rrd_color		00ff00
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	vianna-MEM=(\d+[\.,]?\d?)%
+	graph_value		viannaMEM
+	graph_units		%
+	graph_legend		vianna MEM
+	rrd_plottype		LINE3
+	rrd_color		00ff00
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	magno-CPU=(\d+[\.,]?\d?)%
+	graph_value		magnoCPU
+	graph_units		%
+	graph_legend		magno CPU
+	rrd_plottype		LINE3
+	rrd_color		0000ff
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	magno-MEM=(\d+[\.,]?\d?)%
+	graph_value		magnoMEM
+	graph_units		%
+	graph_legend		magno MEM
+	rrd_plottype		LINE3
+	rrd_color		0000ff
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	fabricio-CPU=(\d+[\.,]?\d?)%
+	graph_value		fabricioCPU
+	graph_units		%
+	graph_legend		fabricio CPU
+	rrd_plottype		LINE3
+	rrd_color		eeee00
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	fabricio-MEM=(\d+[\.,]?\d?)%
+	graph_value		fabricioMEM
+	graph_units		%
+	graph_legend		fabricio MEM
+	rrd_plottype		LINE3
+	rrd_color		eeee00
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	tiagorm-CPU=(\d+[\.,]?\d?)%
+	graph_value		tiagormCPU
+	graph_units		%
+	graph_legend		tiagorm CPU
+	rrd_plottype		LINE3
+	rrd_color		000000
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	tiagorm-MEM=(\d+[\.,]?\d?)%
+	graph_value		tiagormMEM
+	graph_units		%
+	graph_legend		tiagorm MEM
+	rrd_plottype		LINE3
+	rrd_color		000000
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	giovannicomarela-CPU=(\d+[\.,]?\d?)%
+	graph_value		giovannicomarelaCPU
+	graph_units		%
+	graph_legend		giovannicomarela CPU
+	rrd_plottype		LINE3
+	rrd_color		00ffff
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	giovannicomarela-MEM=(\d+[\.,]?\d?)%
+	graph_value		giovannicomarelaMEM
+	graph_units		%
+	graph_legend		giovannicomarela MEM
+	rrd_plottype		LINE3
+	rrd_color		00ffff
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	tpontes-CPU=(\d+[\.,]?\d?)%
+	graph_value		tpontesCPU
+	graph_units		%
+	graph_legend		tpontes CPU
+	rrd_plottype		LINE3
+	rrd_color		ff00ff
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	tpontes-MEM=(\d+[\.,]?\d?)%
+	graph_value		tpontesMEM
+	graph_units		%
+	graph_legend		tpontes MEM
+	rrd_plottype		LINE3
+	rrd_color		ff00ff
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	marisavas-CPU=(\d+[\.,]?\d?)%
+	graph_value		marisavasCPU
+	graph_units		%
+	graph_legend		marisavas CPU
+	rrd_plottype		LINE3
+	rrd_color		ff9900
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	marisavas-MEM=(\d+[\.,]?\d?)%
+	graph_value		marisavasMEM
+	graph_units		%
+	graph_legend		marisavas MEM
+	rrd_plottype		LINE3
+	rrd_color		ff9900
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	diego-CPU=(\d+[\.,]?\d?)%
+	graph_value		diegoCPU
+	graph_units		%
+	graph_legend		diego CPU
+	rrd_plottype		LINE3
+	rrd_color		ff0099
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	diego-MEM=(\d+[\.,]?\d?)%
+	graph_value		diegoMEM
+	graph_units		%
+	graph_legend		diego MEM
+	rrd_plottype		LINE3
+	rrd_color		ff0099
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	rauber-CPU=(\d+[\.,]?\d?)%
+	graph_value		rauberCPU
+	graph_units		%
+	graph_legend		rauber CPU
+	rrd_plottype		LINE3
+	rrd_color		00ff99
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	rauber-MEM=(\d+[\.,]?\d?)%
+	graph_value		rauberMEM
+	graph_units		%
+	graph_legend		rauber MEM
+	rrd_plottype		LINE3
+	rrd_color		00ff99
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	saulomrr-CPU=(\d+[\.,]?\d?)%
+	graph_value		saulomrrCPU
+	graph_units		%
+	graph_legend		saulomrr CPU
+	rrd_plottype		LINE3
+	rrd_color		99ff00
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	saulomrr-MEM=(\d+[\.,]?\d?)%
+	graph_value		saulomrrMEM
+	graph_units		%
+	graph_legend		saulomrr MEM
+	rrd_plottype		LINE3
+	rrd_color		99ff00
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	jpesce-CPU=(\d+[\.,]?\d?)%
+	graph_value		jpesceCPU
+	graph_units		%
+	graph_legend		jpesce CPU
+	rrd_plottype		LINE3
+	rrd_color		0099ff
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	jpesce-MEM=(\d+[\.,]?\d?)%
+	graph_value		jpesceMEM
+	graph_units		%
+	graph_legend		jpesce MEM
+	rrd_plottype		LINE3
+	rrd_color		0099ff
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	douglasf-CPU=(\d+[\.,]?\d?)%
+	graph_value		douglasfCPU
+	graph_units		%
+	graph_legend		douglasf CPU
+	rrd_plottype		LINE3
+	rrd_color		9900ff
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	douglasf-MEM=(\d+[\.,]?\d?)%
+	graph_value		douglasfMEM
+	graph_units		%
+	graph_legend		douglasf MEM
+	rrd_plottype		LINE3
+	rrd_color		9900ff
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	rapha-CPU=(\d+[\.,]?\d?)%
+	graph_value		raphaCPU
+	graph_units		%
+	graph_legend		rapha CPU
+	rrd_plottype		LINE3
+	rrd_color		880000
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	rapha-MEM=(\d+[\.,]?\d?)%
+	graph_value		raphaMEM
+	graph_units		%
+	graph_legend		rapha MEM
+	rrd_plottype		LINE3
+	rrd_color		880000
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	mtcs-CPU=(\d+[\.,]?\d?)%
+	graph_value		mtcsCPU
+	graph_units		%
+	graph_legend		mtcs CPU
+	rrd_plottype		LINE3
+	rrd_color		008800
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	mtcs-MEM=(\d+[\.,]?\d?)%
+	graph_value		mtcsMEM
+	graph_units		%
+	graph_legend		mtcs MEM
+	rrd_plottype		LINE3
+	rrd_color		008800
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	adrianov-CPU=(\d+[\.,]?\d?)%
+	graph_value		adrianovCPU
+	graph_units		%
+	graph_legend		adrianov CPU
+	rrd_plottype		LINE3
+	rrd_color		000088
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	adrianov-MEM=(\d+[\.,]?\d?)%
+	graph_value		adrianovMEM
+	graph_units		%
+	graph_legend		adrianov MEM
+	rrd_plottype		LINE3
+	rrd_color		000088
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	root-CPU=(\d+[\.,]?\d?)%
+	graph_value		rootCPU
+	graph_units		%
+	graph_legend		root CPU
+	rrd_plottype		LINE3
+	rrd_color		888800
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	root-MEM=(\d+[\.,]?\d?)%
+	graph_value		rootMEM
+	graph_units		%
+	graph_legend		root MEM
+	rrd_plottype		LINE3
+	rrd_color		888800
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	claudiomanoel-CPU=(\d+[\.,]?\d?)%
+	graph_value		claudiomanoelCPU
+	graph_units		%
+	graph_legend		claudiomanoel CPU
+	rrd_plottype		LINE3
+	rrd_color		880088
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	claudiomanoel-MEM=(\d+[\.,]?\d?)%
+	graph_value		claudiomanoelMEM
+	graph_units		%
+	graph_legend		claudiomanoel MEM
+	rrd_plottype		LINE3
+	rrd_color		880088
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	anupama-CPU=(\d+[\.,]?\d?)%
+	graph_value		anupamaCPU
+	graph_units		%
+	graph_legend		anupama CPU
+	rrd_plottype		LINE3
+	rrd_color		008888
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	anupama-MEM=(\d+[\.,]?\d?)%
+	graph_value		anupamaMEM
+	graph_units		%
+	graph_legend		anupama MEM
+	rrd_plottype		LINE3
+	rrd_color		008888
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	felipemoraes-CPU=(\d+[\.,]?\d?)%
+	graph_value		felipemoraesCPU
+	graph_units		%
+	graph_legend		felipemoraes CPU
+	rrd_plottype		LINE3
+	rrd_color		888888
+	page			CPU
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define ngraph{
+	service_name		User Processes
+	graph_perf_regex	felipemoraes-MEM=(\d+[\.,]?\d?)%
+	graph_value		felipemoraesMEM
+	graph_units		%
+	graph_legend		felipemoraes MEM
+	rrd_plottype		LINE3
+	rrd_color		888888
+	page			MEM
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+}
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes hadoop CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		hadoopCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes hadoop MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		hadoopMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes vianna CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		viannaCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes vianna MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		viannaMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes magno CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		magnoCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes magno MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		magnoMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes fabricio CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		fabricioCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes fabricio MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		fabricioMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes tiagorm CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		tiagormCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes tiagorm MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		tiagormMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes giovannicomarela CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		giovannicomarelaCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes giovannicomarela MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		giovannicomarelaMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes tpontes CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		tpontesCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes tpontes MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		tpontesMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes marisavas CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		marisavasCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes marisavas MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		marisavasMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes diego CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		diegoCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes diego MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		diegoMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes rauber CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		rauberCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes rauber MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		rauberMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes saulomrr CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		saulomrrCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes saulomrr MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		saulomrrMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes jpesce CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		jpesceCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes jpesce MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		jpesceMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes douglasf CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		douglasfCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes douglasf MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		douglasfMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes rapha CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		raphaCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes rapha MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		raphaMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes mtcs CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		mtcsCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes mtcs MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		mtcsMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes adrianov CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		adrianovCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes adrianov MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		adrianovMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes root CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		rootCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes root MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		rootMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes claudiomanoel CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		claudiomanoelCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes claudiomanoel MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		claudiomanoelMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes anupama CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		anupamaCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes anupama MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		anupamaMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes felipemoraes CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		felipemoraesCPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes felipemoraes MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		felipemoraesMEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes CPU
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		CPU
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 
+
+define nmgraph{
+	host_name		* Multigraphen
+	service_name		All Processes MEM
+	# RegEX
+	hosts			.*?
+	# RegEX
+	services		User Processes
+	graph_values		MEM
+	# line or stack or area
+	graph_type		line3
+	# normal or reverse or leave blank
+	#order			normal
+	colors			ff0000,00ff00,0000ff,eeee00,000000,00ffff,ff00ff,ff9900,ff0099,00ff99,99ff00,0099ff,9900ff,880000,008800,000088,888800,880088,008888,888888,440000,004400,000044,444400,440044,004444
+} 

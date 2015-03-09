@@ -1,0 +1,46 @@
+#---
+#NagiosGrapherTemplateforcheck_ping
+#Author:MariusHein
+#---
+
+#PingDEFPacketloss
+define ngraph{
+	service_name		PING
+	graph_log_regex		loss = (\d+)
+	graph_value		Loss
+	graph_units		%
+	graph_legend		Loss
+	graph_legend_eol	none
+	page			2 Loss
+	rrd_plottype		LINE2
+	rrd_color		ff0000
+}
+
+#PingDEFRTA
+define ngraph{
+	service_name		PING
+	graph_log_regex		rta = (\d+[,\.]\d+)
+	graph_value		RTA
+	graph_units		ms
+	graph_legend		RTA
+	page			1 RTA
+	rrd_plottype		AREA
+	rrd_color		00a000
+}
+
+#PingVDEF,AverageRTA
+define ngraph{
+	service_name		PING
+	type			VDEF
+	graph_value		vdef_ping_average
+	graph_units
+	graph_legend		RTA Average
+	graph_calc		RTA,AVERAGE
+	graph_legend_eol	LEFT
+	page			1 RTA
+	rrd_plottype		LINE1
+	rrd_color		0000ff
+	hide			no
+}
+
+#[EOF]

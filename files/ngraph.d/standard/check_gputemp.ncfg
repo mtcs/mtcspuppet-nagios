@@ -1,0 +1,43 @@
+#---
+#NagiosGrapherTemplateforcheck_cpu
+#Author:MtCS
+#---
+
+define ngraph{
+	service_name		GPU Temperature
+	graph_log_regex		GPU0:(\d+)
+	graph_value		GPU0
+	graph_units		C
+	rrd_plottype		AREA
+	rrd_color		AAAA00
+}
+
+define ngraph{
+	service_name		GPU Temperature
+	graph_log_regex		GPU1:(\d+)
+	graph_value		GPU1
+	graph_units		C
+	rrd_plottype		AREA
+	rrd_color		00AA00
+}
+
+#define ngraph{
+#	service_name		GPU Temperature
+#	graph_lo_regex		GPU2:(\d+)
+#	graph_value		GPU2
+#	graph_units		C
+#	rrd_plottype		AREA
+#	rrd_color		AA0000
+#}
+
+#define ngraph{
+#	service_name		GPU Temperature
+#	graph_lo_regex		GPU3:(\d+)
+#	graph_value		GPU3
+#	graph_units		C
+#	rrd_plottype		AREA
+#	rrd_color		00AAAA
+#}
+
+
+#[EOF]

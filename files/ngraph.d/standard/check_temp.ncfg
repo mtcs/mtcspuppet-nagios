@@ -1,0 +1,67 @@
+define ngraph{
+	service_name		Temperature
+	graph_log_regex		TEMP: (\d+)
+	graph_value		TEMP
+	graph_units		degres
+	graph_legend		Core temperature
+	rrd_plottype		AREA
+	rrd_color		ff2211
+}
+
+
+define ngraph{
+	service_name		Temperature
+	type			HRULE
+	hrule_value		100
+	rrd_color		ff0000
+	rrd_plottype		LINE3
+	hide			no
+}
+define ngraph{
+	service_name		Temperature
+	type			HRULE
+	hrule_value		80
+	rrd_color		ff3322
+	rrd_plottype		LINE3
+	hide			no
+}
+define ngraph{
+	service_name		Temperature
+	type			GPRINT
+	print_source		TEMP
+	print_description	Min. Temp.:
+	print_function		MIN
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Temperature
+	type			GPRINT
+	print_source		TEMP
+	print_description	Av. Temp.:
+	print_function		AVERAGE
+	print_format		%2.1lf
+}
+
+define ngraph{
+	service_name		Temperature
+	type			GPRINT
+	print_source		TEMP
+	print_description	Max. Temp.:
+	print_function		MAX
+	print_format		%2.1lf
+	print_eol		left
+}
+
+define ngraph{
+	service_name		Temperature
+	type			VDEF
+	graph_value		temp_average
+	graph_units		degres
+	graph_legend		Average Temperature
+	graph_calc		TEMP,AVERAGE
+	rrd_plottype		LINE3
+	rrd_color		0000ff
+	hide			no
+}
+

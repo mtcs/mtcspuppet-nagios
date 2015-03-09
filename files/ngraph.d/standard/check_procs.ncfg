@@ -1,0 +1,70 @@
+#---
+#NagiosGrapherTemplateforcheck_procs
+#Author:MariusHein
+#---
+
+define ngraph{
+	service_name		Total_Procs
+	graph_log_regex		([0-9]+)\s+processes
+	graph_value		procs
+	graph_units		procs
+	graph_legend		Running proccesses
+	rrd_plottype		AREA
+	rrd_color		ff0000
+}
+
+define ngraph{
+	service_name		Total_Procs
+	type			CDEF
+	graph_value		cdef_procs
+	graph_units
+	graph_legend
+	graph_calc		procs
+	rrd_plottype		LINE1
+	rrd_color		000000
+}
+
+define ngraph{
+	service_name		Total_Procs
+	type			GPRINT
+	print_source		procs
+	print_description	Current:
+	print_function		LAST
+	print_format		%2.2lf%s
+	print_eol		none:2
+}
+
+define ngraph{
+	service_name		Total_Procs
+	type			GPRINT
+	print_source		procs
+	print_description	Average:
+	print_function		AVERAGE
+	print_format		%2.2lf%s
+	print_eol		none:2
+	print_repeat		0
+}
+
+define ngraph{
+	service_name		Total_Procs
+	type			GPRINT
+	print_source		procs
+	print_description	Maximum:
+	print_function		MAX
+	print_format		%2.2lf%s
+	print_eol		left:2
+}
+
+define ngraph{
+	service_name		Total_Procs
+	type			VDEF
+	graph_value		vdef_procs_average
+	graph_units
+	graph_legend		Average values
+	graph_calc		cdef_procs,AVERAGE
+	rrd_plottype		LINE1
+	rrd_color		0000ff
+	hide			no
+}
+
+#[EOF]
