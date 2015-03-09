@@ -2,8 +2,8 @@ class nagios::server(
   $omit_default_servicegroup = false,
   $default_service_members = 'Default',
 ){
-  include ::nagios::server_resources
-  include ::nagios::nagiosgrapher
+  include nagios::server_resources
+  include nagios::nagiosgrapher
 
   $nagios_server_pkgs = [ 'nagios3', 'nagios-nrpe-plugin' ]
   package { $nagios_server_pkgs : ensure => present }
