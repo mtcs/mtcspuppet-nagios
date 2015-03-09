@@ -4,8 +4,7 @@ class nagios::agent(
   $mon_profile = 'generic-host', 
   $parent = ''
 ){
-  include fan_control
-  include nagios
+  include nagios::agent_resources
 
   $pkgs = [ 
   'nagios-nrpe-server', 'nagios-plugins', 'nagios-plugins-standard', 

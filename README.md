@@ -2,7 +2,7 @@
 
 __This module is under heavy contruction, caution is advised__
 
-This is a puppet mmodule  for nagios. It configures the nagios server and the agents in the machines to be monitored.
+This is a puppet module  for Nagios3. It configures the Nagios3 server and NRPE agents in the machines to be monitored.
 If the server is included in a host and agents, the nodes that  include the agent class will automatically appear in the monitoring environment with performance charts.
 To do so, it depends on nagiosgrapher to provide performance charts and uses PuppetDB to configure client resources in the server config files.
 
