@@ -1,6 +1,6 @@
 class nagios::server(
   $omit_default_servicegroup = false,
-  $default_smembers = 'Default',
+  $default_service_members = 'Default',
 ){
   include nagios::server_resources
   include nagios::nagiosgrapher

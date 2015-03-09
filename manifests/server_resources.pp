@@ -1,6 +1,6 @@
 class nagios::server_resources(
   $omit_default_servicegroup = $nagios::server::omit_default_servicegroup,
-  $default_smembers = $nagios::server::default_smembers,
+  $default_service_members = $nagios::server::default_smembers,
 ){
   define host ($ipadd, $use = 'generic-host', $groups = 'all-servers', $parent = 'switch_0', $icon = 'ubuntu' ){
     file { "nagios_host_$title" :
