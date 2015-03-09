@@ -52,7 +52,7 @@ class nagios::server_resources(
     $check, $use = 'generic-service', 
   ){
     if ( $members != 'all-servers,unmanaged-servers' ){
-      nagios::hostgroup { "$members" : }
+      hostgroup { "$members" : }
     }
     file { "nagios_rservice_$title" :
       path    => "/etc/nagios3/resources.d/rservice-$title.cfg",
