@@ -6,13 +6,13 @@ class nagios::nagiosgrapher{
     path               => '/etc/nagiosgrapher/ngraph.ncfg',
     require        => Package['nagiosgrapher'],
     ensure     => present,
-    source => "puppet:///files/nagios/ngraph.ncfg",
+    source => "puppet:///modules/nagios/ngraph.ncfg",
   }
   file {'ngraph.d':
     path                    => '/etc/nagiosgrapher/ngraph.d',
     require             => Package['nagiosgrapher'],
     ensure          => present,
-    source      => "puppet:///files/nagios/ngraph.d",
+    source      => "puppet:///modules/nagios/ngraph.d",
     recurse => true
   }
   service { 'nagiosgrapher':

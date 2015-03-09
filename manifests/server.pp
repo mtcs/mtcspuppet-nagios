@@ -2,11 +2,18 @@ class nagios::server(
   $omit_default_servicegroup = false,
   $default_service_members = 'Default',
 ){
-  class {'nagios::server_resources': 
+  class {'::nagios::server_resources': 
     omit_default_servicegroup => $omit_default_servicegroup,
     default_service_members   => $default_service_members,
   }
   include nagios::nagiosgrapher
+
+  file {'nagios3-apache-config-enable':
+    path   => '/etc/apache2/sites-enabled/25-nagios3.conf',
+    target => '/etc/nagios3/apache2.conf',
+    ensure => 'link',
+    notify => Service[httpd],
+  }
 
   $nagios_server_pkgs = [ 'nagios3', 'nagios-nrpe-plugin' ]
   package { $nagios_server_pkgs : ensure => present }
@@ -29,7 +36,7 @@ class nagios::server(
       path                           => "$path/$title",
       require                  => Package['nagios3'],
       ensure             => present,
-      source       => "puppet://nagios/files/conf/$title",
+      source       => "puppet:///modules/nagios/conf/$title",
       notify => Service['nagios3'],
     }
   }

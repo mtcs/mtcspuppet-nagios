@@ -1,5 +1,5 @@
 class nagios::agent_resources(){
-  define plugins {
+  define plugin($path){
     file{ "$title" :
       path    => "/usr/lib/nagios/plugins/$title",
       ensure  => present,

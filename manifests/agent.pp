@@ -17,7 +17,7 @@ class nagios::agent(
     path               => '/etc/nagios/nrpe.cfg',
     ensure         => present,
     require    => Package['nagios-nrpe-server'],
-    source => "puppet://nagios/files/nrpe.cfg"
+    source => "puppet:///modules/nagios/nrpe.cfg"
   }
 
   #file { 'band.cfg':
