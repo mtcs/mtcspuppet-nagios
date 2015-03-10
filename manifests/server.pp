@@ -42,7 +42,7 @@ class nagios::server(
   file { '/var/lib/nagios3/rw/nagios.cmd':
     ensure  => 'present',
     owner   => 'nagios',
-    group   => 'nagios',
+    group   => 'www-data',
     mode    => 770,
     require => File['/var/lib/nagios3/rw']
   }
