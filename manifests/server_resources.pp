@@ -104,7 +104,7 @@ class nagios::server_resources(
         owner   => nagios,
         mode    => 640,
         notify  => Service['nagios3'],
-        content => "define host {\n use $use\n host_name switch_$title\n alias Switch $name\n address $ipadd\n hostgroups switches\n   icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
+        content => "define host {\n use $use\n host_name switch_$title\n alias Switch $name\n address $ipadd\n hostgroups Switches\n   icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
       }
       }else{
         file { "nagios_switch_$title" :
@@ -114,7 +114,7 @@ class nagios::server_resources(
           owner   => nagios,
           mode    => 640,
           notify  => Service['nagios3'],
-          content => "define host {\n use $use\n host_name switch_$title\n alias Switch $name\n address $ipadd\n hostgroups switches\n parents $parent\n   icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
+          content => "define host {\n use $use\n host_name switch_$title\n alias Switch $name\n address $ipadd\n hostgroups Switches\n parents $parent\n   icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
         }
       }
   }
@@ -127,23 +127,23 @@ class nagios::server_resources(
   ){
     if ($parent == ''){
       file { "nagios_host_$title" :
-        path                                                    => "/etc/nagios3/resources.d/uhost_$title.cfg",
-        require                                         => File['nagios_resource_dir'],
-        ensure                                  => present,
-        owner                           => nagios,
-        mode                    => 640,
-        notify          => Service['nagios3'],
-        content => "define host {\n use $use\n host_name $title\n alias $name\n address $ipadd\n hostgroups unmanaged-servers\n  icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
+        path    => "/etc/nagios3/resources.d/uhost_$title.cfg",
+        require => File['nagios_resource_dir'],
+        ensure  => present,
+        owner   => nagios,
+        mode    => 640,
+        notify  => Service['nagios3'],
+        content => "define host {\n use $use\n host_name $title\n alias $name\n address $ipadd\n hostgroups Unmanaged_Hosts\n  icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
       }
       }else{
         file { "nagios_host_$title" :
-          path                                                    => "/etc/nagios3/resources.d/uhost_$title.cfg",
-          require                                         => File['nagios_resource_dir'],
-          ensure                                  => present,
-          owner                           => nagios,
-          mode                    => 640,
-          notify          => Service['nagios3'],
-          content => "define host {\n use $use\n host_name $title\n alias $name\n address $ipadd\n hostgroups unmanaged-servers\n parents $parent\n  icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
+          path    => "/etc/nagios3/resources.d/uhost_$title.cfg",
+          require => File['nagios_resource_dir'],
+          ensure  => present,
+          owner   => nagios,
+          mode    => 640,
+          notify  => Service['nagios3'],
+          content => "define host {\n use $use\n host_name $title\n alias $name\n address $ipadd\n hostgroups Unmanaged_Hosts\n parents $parent\n  icon_image $icon.png\n icon_image_alt  $name \n statusmap_image  $icon.gd2\n }\n",
         }
       }
   }

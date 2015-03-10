@@ -8,6 +8,9 @@ class nagios::server(
   }
   include nagios::nagiosgrapher
 
+  nagios::server_resources::hostgroup{'Switches':}
+  nagios::server_resources::hostgroup{'Unmanaged_Hosts':}
+
   file {'nagios3-apache-config-enable':
     path   => '/etc/apache2/sites-enabled/25-nagios3.conf',
     target => '/etc/nagios3/apache2.conf',
@@ -27,7 +30,7 @@ class nagios::server(
     ensure   => 'directory',
     owner    => 'nagios',
     purge   => true,
-    #recurse => true,
+    recurse => true,
     mode     => 750,
   }
 
