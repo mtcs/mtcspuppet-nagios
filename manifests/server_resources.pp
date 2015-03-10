@@ -51,9 +51,9 @@ class nagios::server_resources(
   define remote_service (
     $check, $use = 'generic-service', $groups, $members = $::nagios::server_resources::default_service_members
   ){
-    if ( $members != $nagios::server_resources::default_service_members ){
-      hostgroup { "$members" : }
-    }
+    #if ( $members != $nagios::server_resources::default_service_members ){
+    #  hostgroup { "$members" : }
+    #}
     file { "nagios_rservice_$title" :
       path    => "/etc/nagios3/resources.d/rservice-$title.cfg",
       require => File['nagios_resource_dir'],

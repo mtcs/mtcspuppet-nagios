@@ -1,5 +1,6 @@
 class nagios::agent(
   $hname = $hostname, 
+  $server_ip = '127.0.0.1',
   $mon_group, 
   $mon_profile = 'generic-host', 
   $parent = ''
@@ -13,11 +14,21 @@ class nagios::agent(
 
   package { $pkgs : ensure => present }
 
+  $custom_plugins = [ 
+    'check_cpu.sh',  'check_gputemp.sh',  'check_hadoop',  'check_iftraffic3.pl',  
+    'check_ifutil.pl',  'check_io',  'check_io_all',  'check_io_scratch',  'check_jps',  
+    'check_memory',  'check_proc',  'check_restart', 'check_scratch',  
+    'check_temp.pl',  'check_userprocs.pl', 
+  ] 
+
+  # Install new custom plugins
+  nagios::agent_resources::plugin { $custom_plugins : path =>  '/modules/nagios/plugins'}
+
   file { 'nrpe.cfg':
-    path               => '/etc/nagios/nrpe.cfg',
-    ensure         => present,
-    require    => Package['nagios-nrpe-server'],
-    source => "puppet:///modules/nagios/nrpe.cfg"
+    path    => '/etc/nagios/nrpe.cfg',
+    ensure  => present,
+    require => Package['nagios-nrpe-server'],
+    source  => template("nagios/nrpe.cfg.erb"),
   }
 
   #file { 'band.cfg':
@@ -31,10 +42,10 @@ class nagios::agent(
     #}
 
   service { 'nagios-nrpe-server':
-    name                  => 'nagios-nrpe-server',
-    enable            => true,
-    ensure        => running,
-    subscribe =>  File [ [ 'nrpe.cfg' ] ], 
+    name      => 'nagios-nrpe-server',
+    enable    => true,
+    ensure    => running,
+    subscribe => File [ [ 'nrpe.cfg' ] ],
   }
 
   @@nagios::server_resources::host { "$hname" :
