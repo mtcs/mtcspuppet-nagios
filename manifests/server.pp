@@ -33,6 +33,11 @@ class nagios::server(
     recurse => true,
     mode     => 750,
   }
+  #file { '/var/lib/nagios3/rw/nagios.cmd':
+    #ensure   => 'present',
+    #owner    => 'www-data',
+    #mode     => 660,
+  #}
 
   define nagios_configfile($path = '/etc/nagios3'){
     file{"nagios_config_$title":
@@ -66,7 +71,7 @@ class nagios::server(
     enable          => true,
     ensure      => running,
     #notify =>  Service['nagiosgrapher'],
-    }
+   }
 
 }
                                                                                                                                                                                   
