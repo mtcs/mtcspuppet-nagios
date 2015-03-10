@@ -6,7 +6,7 @@ class nagios::server_resources(
     if ( $icon == undef ){
     case $os {
         ubuntu: { $ficon = 'base/ubuntu' }
-        default: { $ficon = 'base/linux' }
+        default: { $ficon = 'base/linux40' }
       }
     }else{
       $ficon = $icon
