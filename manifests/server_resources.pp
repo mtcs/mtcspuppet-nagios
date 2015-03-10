@@ -5,9 +5,11 @@ class nagios::server_resources(
   define host ($ipadd, $use = 'generic-host', $groups = 'Default', $parent = 'switch_0', $icon = undef, $os = 'linux'){
     if ( $icon == undef ){
     case $os {
-        ubuntu: { $icon = 'base/ubuntu' }
-        default: { $icon = 'base/linux' }
+        ubuntu: { $ficon = 'base/ubuntu' }
+        default: { $ficon = 'base/linux' }
       }
+    }else{
+      $ficon = $icon
     }
     file { "nagios_host_$title" :
       path    => "/etc/nagios3/resources.d/host_$title.cfg",
@@ -17,15 +19,15 @@ class nagios::server_resources(
       mode    => 640,
       notify  => Service['nagios3'],
       content => "define host {
-        use $use
-        host_name $title
-        alias $name
-        address $ipadd
-        hostgroups $groups
-        parents $parent 
-        icon_image $icon.png
+        use             $use
+        host_name       $title
+        alias           $name
+        address         $ipadd
+        hostgroups      $groups
+        parents         $parent 
+        icon_image      $ficon.png
         icon_image_alt  $title
-        statusmap_image  $icon.gd2
+        statusmap_image $ficon.gd2
         }\n",
     }
   }
