@@ -39,13 +39,13 @@ class nagios::server(
     group  => 'www-data',
     mode   => 770,
   }
-  #file { '/var/lib/nagios3/rw/nagios.cmd':
-    #ensure  => 'present',
-    #owner   => 'nagios',
-    #group   => 'www-data',
-    #mode    => 660,
-    #require => File['/var/lib/nagios3/rw']
-  #}
+  file { '/var/lib/nagios3/rw/nagios.cmd':
+    ensure  => 'present',
+    owner   => 'nagios',
+    group   => 'nagios',
+    mode    => 770,
+    require => File['/var/lib/nagios3/rw']
+  }
 
   define nagios_configfile($path = '/etc/nagios3'){
     file{"nagios_config_$title":
