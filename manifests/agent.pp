@@ -28,14 +28,20 @@ class nagios::agent(
     path    => '/etc/nagios/nrpe.cfg',
     ensure  => present,
     require => Package['nagios-nrpe-server'],
-    content  => template("nagios/nrpe.cfg.erb"),
+    content => template("nagios/nrpe.cfg.erb"),
   }
 
+  file { '/etc/nagios/nrpe.d':
+    ensure  => directory,
+    require => Package['nagios-nrpe-server'],
+    purge   => true,
+    recurse => true,
+  }
   #file { 'band.cfg':
-    #path                    => '/etc/nagios/nrpe.d/band.cfg',
-    #replace             => no,
-    #ensure          => present,
-    #require     => Package['nagios-nrpe-server'],
+    #path    => '/etc/nagios/nrpe.d/band.cfg',
+    #replace => no,
+    #ensure  => present,
+    #require => Package['nagios-nrpe-server'],
     #content => '
     #command[check_bandw_eth0]=/usr/lib/nagios/plugins/check_ifutil.pl -i eth0 -w 85 -c 95 -p -b 1000m
     #command[check_bandw_eth1]=/usr/lib/nagios/plugins/check_ifutil.pl -i eth1 -w 85 -c 95 -p -b 1000m '

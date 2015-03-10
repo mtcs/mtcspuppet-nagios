@@ -7,7 +7,7 @@ class nagios::agent_resources(){
     }
   }
   define nrpe_command($command){
-    file{ "/etc/nagios/nrpe.d/$title" :
+    file{ "/etc/nagios/nrpe.d/$title.cfg" :
       ensure  => present,
       require => Package[ 'nagios-nrpe-server' ],
       content => "command[$title]=/usr/lib/nagios/plugins/$command",
