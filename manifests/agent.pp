@@ -59,7 +59,8 @@ class nagios::agent(
     ipadd  => "$ipaddress",
     use    => "$mon_profile",
     groups => "$mon_group",
-    parent => "$parent"
+    parent => "$parent",
+    os     => "$operatingsystem",
   }
 }
 

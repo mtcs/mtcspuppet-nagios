@@ -35,7 +35,7 @@ class nagios::server(
   }
 
   exec { 'override_nagios_wr_command_files':
-    command   => '/usr/bin/dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rwi; /usr/bin/dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3',
+    command   => '/usr/bin/dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rw; /usr/bin/dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3',
     notify    => Service ['nagios3'],
     subscribe => Package['nagios3']
   }

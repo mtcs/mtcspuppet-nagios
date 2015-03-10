@@ -2,7 +2,13 @@ class nagios::server_resources(
   $omit_default_servicegroup = undef,
   $default_service_members = undef,
 ){
-  define host ($ipadd, $use = 'generic-host', $groups = 'Default', $parent = 'switch_0', $icon = 'ubuntu' ){
+  define host ($ipadd, $use = 'generic-host', $groups = 'Default', $parent = 'switch_0', $icon = undef, $os = 'linux'){
+    if ( $icon == undef ){
+    case $os {
+        ubuntu: { $icon = 'base/ubuntu' }
+        default: { $icon = 'base/linux' }
+      }
+    }
     file { "nagios_host_$title" :
       path    => "/etc/nagios3/resources.d/host_$title.cfg",
       require => File['nagios_resource_dir'],
