@@ -34,11 +34,20 @@ class nagios::server(
     mode    => 750,
   }
 
-  exec { 'override_nagios_wr_command_files':
-    command   => '/usr/bin/dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rw; /usr/bin/dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3',
-    notify    => Service ['nagios3'],
-    subscribe => Package['nagios3']
+  file { '/var/lib/nagios3':
+    ensure  => 'directory',
+    mode    => 751,
   }
+  file { '/var/lib/nagios3/rw':
+    ensure  => 'directory',
+    mode    => 2710,
+  }
+
+  #exec { 'override_nagios_wr_command_files':
+  #  command   => '/usr/bin/dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rw; /usr/bin/dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3 || exit 0',
+  #  notify    => Service ['nagios3'],
+  #  subscribe => Package['nagios3']
+  #}
 
 
   define nagios_configfile($path = '/etc/nagios3'){
