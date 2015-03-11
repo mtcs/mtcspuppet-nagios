@@ -9,7 +9,7 @@ class nagios::agent(
 
   $pkgs = [ 
   'nagios-nrpe-server', 'nagios-plugins', 'nagios-plugins-standard', 
-  'nagios-plugins-basic', 'nagios-plugins-extra'
+  'nagios-plugins-basic', 'nagios-plugins-extra', 'bc'
   ]
 
   package { $pkgs : ensure => present }
