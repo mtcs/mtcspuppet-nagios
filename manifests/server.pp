@@ -37,10 +37,18 @@ class nagios::server(
   file { '/var/lib/nagios3':
     ensure  => 'directory',
     mode    => 751,
+    require => Package['nagios3'],
   }
   file { '/var/lib/nagios3/rw':
     ensure  => 'directory',
     mode    => 2710,
+    require => Package['nagios3'],
+  }
+  file { '/var/lib/nagios3/rw/nagios.cmd':
+    ensure  => 'present',
+    user    => 'nagios',
+    greoup  => 'www-data',
+    require => Package['nagios3'],
   }
 
   #exec { 'override_nagios_wr_command_files':
