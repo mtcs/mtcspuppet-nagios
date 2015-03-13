@@ -46,8 +46,8 @@ class nagios::server(
   }
   file { '/var/lib/nagios3/rw/nagios.cmd':
     ensure  => 'present',
-    user    => 'nagios',
-    greoup  => 'www-data',
+    owner   => 'nagios',
+    group   => 'www-data',
     require => Package['nagios3'],
   }
 

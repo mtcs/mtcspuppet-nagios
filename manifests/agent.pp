@@ -3,7 +3,8 @@ class nagios::agent(
   $server_ip = '127.0.0.1',
   $mon_group, 
   $mon_profile = 'generic-host', 
-  $parent = ''
+  $parent = '',
+  $icon,
 ){
   include nagios::agent_resources
 
@@ -54,13 +55,14 @@ class nagios::agent(
     subscribe => File [ [ 'nrpe.cfg' ] ],
   }
 
-  @@nagios::server_resources::host { "$hname" :
-    name   => "$fqdn",
-    ipadd  => "$ipaddress",
-    use    => "$mon_profile",
-    groups => "$mon_group",
-    parent => "$parent",
-    os     => "$operatingsystem",
+  @@nagios::server_resources::host { $hname :
+    name   => $fqdn,
+    ipadd  => $ipaddress,
+    use    => $mon_profile,
+    groups => $mon_group,
+    parent => $parent,
+    os     => $operatingsystem,
+    icon   => $icon,
   }
 }
 
