@@ -18,8 +18,11 @@ class nagios::server(
     notify => Service[httpd],
   }
 
-  $nagios_server_pkgs = [ 'nagios3', 'nagios-nrpe-plugin' ]
-  package { $nagios_server_pkgs : ensure => present }
+  $nagios_server_pkgs = [ 'nagios3' ]
+  package { $nagios_server_pkgs :
+    ensure  => present,
+    require => Package['nagios-nrpe-plugin'],
+  }
 
   $nagios_server_resource_configfiles = [ 'generic-host_nagios2.cfg', 'generic-switch_nagios2.cfg', 'generic-service_nagios2.cfg', 'custom_cmds.cfg' ]
   $nagios_server_configfiles = [ 'nagios.cfg', 'apache2.conf', 'cgi.cfg' ]
