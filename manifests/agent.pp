@@ -8,8 +8,12 @@ class nagios::agent(
 ){
   include nagios::agent_resources
 
+  #$pkgs = [ 
+  #'nagios-nrpe-server', 'nagios-plugins', 'nagios-plugins-standard', 
+  #'nagios-plugins-basic', 'nagios-plugins-extra', 'bc'
+  #]
   $pkgs = [ 
-  'nagios-nrpe-server', 'nagios-plugins', 'nagios-plugins-standard', 
+  'nagios-plugins', 'nagios-plugins-standard', 
   'nagios-plugins-basic', 'nagios-plugins-extra', 'bc'
   ]
 
@@ -23,21 +27,21 @@ class nagios::agent(
   ] 
 
   # Install new custom plugins
-  nagios::agent_resources::plugin { $custom_plugins : path =>  '/modules/nagios/plugins'}
+  #nagios::agent_resources::plugin { $custom_plugins : path =>  '/modules/nagios/plugins'}
 
-  file { 'nrpe.cfg':
-    path    => '/etc/nagios/nrpe.cfg',
-    ensure  => present,
-    require => Package['nagios-nrpe-server'],
-    content => template("nagios/nrpe.cfg.erb"),
-  }
+  #file { 'nrpe.cfg':
+  #  path    => '/etc/nagios/nrpe.cfg',
+  #  ensure  => present,
+  #  require => Package['nagios-nrpe-server'],
+  #  content => template("nagios/nrpe.cfg.erb"),
+  #}
 
-  file { '/etc/nagios/nrpe.d':
-    ensure  => directory,
-    require => Package['nagios-nrpe-server'],
-    purge   => true,
-    recurse => true,
-  }
+  #file { '/etc/nagios/nrpe.d':
+  #  ensure  => directory,
+  #  require => Package['nagios-nrpe-server'],
+  #  purge   => true,
+  #  recurse => true,
+  #}
   #file { 'band.cfg':
     #path    => '/etc/nagios/nrpe.d/band.cfg',
     #replace => no,
@@ -48,12 +52,12 @@ class nagios::agent(
     #command[check_bandw_eth1]=/usr/lib/nagios/plugins/check_ifutil.pl -i eth1 -w 85 -c 95 -p -b 1000m '
     #}
 
-  service { 'nagios-nrpe-server':
-    name      => 'nagios-nrpe-server',
-    enable    => true,
-    ensure    => running,
-    subscribe => File [ [ 'nrpe.cfg' ] ],
-  }
+    #service { 'nagios-nrpe-server':
+    #name      => 'nagios-nrpe-server',
+    #enable    => true,
+    #ensure    => running,
+    #subscribe => File [ [ 'nrpe.cfg' ] ],
+    #}
 
   @@nagios::server_resources::host { $hname :
     name   => $fqdn,
