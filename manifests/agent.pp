@@ -12,12 +12,8 @@ class nagios::agent(
   #'nagios-nrpe-server', 'nagios-plugins', 'nagios-plugins-standard', 
   #'nagios-plugins-basic', 'nagios-plugins-extra', 'bc'
   #]
-  $pkgs = [ 
-  'nagios-plugins', 'nagios-plugins-standard', 
-  'nagios-plugins-basic', 'nagios-plugins-extra', 'bc'
-  ]
 
-  package { $pkgs : ensure => present }
+  # package { $pkgs : ensure => present }
 
   $custom_plugins = [ 
     'check_cpu.sh',  'check_gputemp.sh',  'check_hadoop',  'check_iftraffic3.pl',  
